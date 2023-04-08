@@ -15,7 +15,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from gun_detector_app import views
+
+# urlpatterns = [
+#     path('admin/', admin.site.urls),path('upload-video/', views.VideoUploadView.as_view(), name='upload-video'),
+# ]
+# from .views import VideoUploadView, GunDetectionView, VideoResultsView
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('upload/', views.VideoUploadView.as_view(), name='upload_video'),
+    path('detect/<int:video_id>/', views.GunDetectionView.as_view(), name='gun_detection'),
+    path('results/<int:video_id>/', views.VideoResultsView.as_view(), name='video_results'),
 ]
