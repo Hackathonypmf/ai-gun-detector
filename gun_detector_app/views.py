@@ -5,11 +5,6 @@ from .forms import VideoUploadForm
 from .gun_detection import detect_guns
 
 # Create your views here.
-from django.shortcuts import render, redirect
-from django.views import View
-from .models import Video
-from .forms import VideoUploadForm
-from .gun_detection import detect_guns
 
 class VideoUploadView(View):
     def get(self, request):

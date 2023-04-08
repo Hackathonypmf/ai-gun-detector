@@ -16,6 +16,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from gun_detector_app import views
+from django.conf import settings
+from django.conf.urls.static import static
 
 # urlpatterns = [
 #     path('admin/', admin.site.urls),path('upload-video/', views.VideoUploadView.as_view(), name='upload-video'),
@@ -26,4 +28,6 @@ urlpatterns = [
     path('upload/', views.VideoUploadView.as_view(), name='upload_video'),
     path('detect/<int:video_id>/', views.GunDetectionView.as_view(), name='gun_detection'),
     path('results/<int:video_id>/', views.VideoResultsView.as_view(), name='video_results'),
-]
+]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+if settings.DEBUG:
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
