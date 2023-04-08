@@ -1,7 +1,12 @@
 {% extends 'base.html' %} {% block content %}
-<h1>Upload Video</h1>
+<h2>Upload a Video</h2>
 <form method="post" enctype="multipart/form-data">
   {% csrf_token %} {{ form.as_p }}
-  <button type="submit">Upload</button>
+  <a href="#" onclick="document.querySelector('form').submit()">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>Upload</a
+  >
 </form>
 {% endblock %}

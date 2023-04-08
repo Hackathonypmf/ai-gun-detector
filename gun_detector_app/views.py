@@ -6,6 +6,10 @@ from .gun_detection import detect_guns
 
 # Create your views here.
 
+class HomePageView(View):
+    def get(self, request):
+        return render(request, 'home.html')
+    
 class VideoUploadView(View):
     def get(self, request):
         form = VideoUploadForm()

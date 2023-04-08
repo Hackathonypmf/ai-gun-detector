@@ -1,40 +1,121 @@
 body {
-  background-color: #263238;
-  font-family: Arial, sans-serif;
+  background-color: rgb(5 8 22);
+  font-family: consolas, sans-serif;
+  color: rgb(255 255 255);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  /* min-height: 100vh; */
 }
 
-.container {
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 20px;
+footer {
+  width: 100%;
+  height: 60px;
+  position: fixed;
+  bottom: 0;
+  text-align: center;
 }
 
-button,
-input[type="submit"] {
-  background-color: #607d8b;
-  color: white;
-  border: none;
-  border-radius: 50px;
-  padding: 12px 24px;
-  font-size: 14px;
-  cursor: pointer;
-  margin: 10px;
-  transition: background-color 0.3s ease;
+p > input {
+  width: 180px;
 }
 
-button:hover,
-input[type="submit"]:hover {
-  background-color: #455a64;
+a {
+  margin-top: 80px;
+  position: relative;
+  display: inline-block;
+  padding: 15px 30px;
+  color: #2196f3;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  text-decoration: none;
+  font-size: 24px;
+  overflow: hidden;
+  transition: 0.2s;
+}
+
+a:hover {
+  color: #255784;
+  background: #2196f3;
+  box-shadow: 0 0 10px #2196f3, 0 0 40px #2196f3, 0 0 80px #2196f3;
+  transition-delay: 0.3s;
+  /* transition-duration: 0.7s; */
+}
+
+a span {
+  position: absolute;
+  display: block;
+}
+
+a span:nth-child(1) {
+  top: 0;
+  left: -100%;
+  height: 2px;
+  width: 100%;
+  background: linear-gradient(90deg, transparent, #2196f3);
+}
+
+a:hover span:nth-child(1) {
+  left: 100%;
+  transition: 1s;
+}
+
+a span:nth-child(2) {
+  top: -100%;
+  right: 0;
+  height: 100%;
+  width: 2px;
+  background: linear-gradient(180deg, transparent, #2196f3);
+}
+
+a:hover span:nth-child(2) {
+  top: 100%;
+  transition: 1s;
+  transition-delay: 0.25s;
+}
+
+a span:nth-child(3) {
+  right: -100%;
+  bottom: 0;
+  height: 2px;
+  width: 100%;
+  background: linear-gradient(270deg, transparent, #2196f3);
+}
+
+a:hover span:nth-child(3) {
+  right: 100%;
+  transition: 1s;
+  transition-delay: 0.5s;
+}
+
+a span:nth-child(4) {
+  bottom: -100%;
+  left: 0;
+  height: 100%;
+  width: 2px;
+  background: linear-gradient(360deg, transparent, #2196f3);
+}
+
+a:hover span:nth-child(4) {
+  bottom: 100%;
+  transition: 1s;
+  transition-delay: 0.75s;
 }
 
 @media (max-width: 768px) {
   .container {
     max-width: 720px;
+    padding: 10px;
   }
 
   button,
   input[type="submit"] {
     font-size: 12px;
+    padding: 10px 20px;
   }
 }
 

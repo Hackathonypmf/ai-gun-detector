@@ -25,6 +25,7 @@ from django.conf.urls.static import static
 # from .views import VideoUploadView, GunDetectionView, VideoResultsView
 
 urlpatterns = [
+    path('', views.HomePageView.as_view(), name='home'),
     path('upload/', views.VideoUploadView.as_view(), name='upload_video'),
     path('detect/<int:video_id>/', views.GunDetectionView.as_view(), name='gun_detection'),
     path('results/<int:video_id>/', views.VideoResultsView.as_view(), name='video_results'),
