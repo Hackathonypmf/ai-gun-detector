@@ -18,6 +18,7 @@ from django.urls import path
 from gun_detector_app import views
 from django.conf import settings
 from django.conf.urls.static import static
+from gun_detector_app.views import run_script
 
 # urlpatterns = [
 #     path('admin/', admin.site.urls),path('upload-video/', views.VideoUploadView.as_view(), name='upload-video'),
@@ -27,6 +28,7 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('', views.HomePageView.as_view(), name='home'),
     path('upload/', views.VideoUploadView.as_view(), name='upload_video'),
+    path('run_script', run_script, name='run_script'),
     path('detect/<int:video_id>/', views.GunDetectionView.as_view(), name='gun_detection'),
     path('results/<int:video_id>/', views.VideoResultsView.as_view(), name='video_results'),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
