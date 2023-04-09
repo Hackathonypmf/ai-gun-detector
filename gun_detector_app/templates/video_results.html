@@ -1,12 +1,20 @@
 {% extends 'base.html' %} {% block content %}
 <h1>{{ video.title }}</h1>
+
+<!-- Commenting out the video tag for the original video
 <video width="320" height="240" controls>
   <source src="{{ video.file.url }}" type="video/mp4" />
+  Your browser does not support the video tag.
 </video>
-<h2>Detected Guns</h2>
+-->
+
+<!-- Display the keypoints GIF -->
+<img src="{{ video.keypoints_gif.url }}" alt="Pose Mapping GIF" />
+
+<h2>Mapped Poses</h2>
 <ul>
-  {% for gun in detected_guns %}
-  <li>{{ gun }}</li>
+  {% for pose in mapped_poses %}
+  <li>{{ pose }}</li>
   {% endfor %}
 </ul>
 {% endblock %}

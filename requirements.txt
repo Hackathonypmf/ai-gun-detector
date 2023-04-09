@@ -1,3 +1,6 @@
 django
 ultralytics
 unicorn
+imageio
+opencv-python
+git+https://github.com/tensorflow/docs

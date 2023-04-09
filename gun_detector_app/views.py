@@ -2,10 +2,11 @@ from django.shortcuts import render, redirect
 from django.views import View
 from .models import Video
 from .forms import VideoUploadForm
-from .gun_detection import detect_guns
+from .gun_detection import detect_keypoints
 import subprocess
 from django.http import JsonResponse
 from pathlib import Path
+from django.core.files import File
 
 # Create your views here.
 
@@ -43,12 +44,20 @@ def run_script(request):
 class GunDetectionView(View):
     def get(self, request, video_id):
         video = Video.objects.get(id=video_id)
-        video.detected_guns = detect_guns(video.file.path)
+        gif_output = detect_keypoints(video.file.path, video_id)
+        
+        # Save the GIF output to a file
+        gif_path = f"keypoints_gifs/{video.id}_keypoints.gif"
+        
+        # Open the saved keypoints GIF file and save it in the video model
+        with open(gif_output, 'rb') as gif_file:
+            video.keypoints_gif.save(gif_path, File(gif_file))
+        
         video.save()
+        
         return redirect('video_results', video_id=video.id)
 
 class VideoResultsView(View):
     def get(self, request, video_id):
         video = Video.objects.get(id=video_id)
-        detected_guns = video.detected_guns.split(',')
-        return render(request, 'video_results.html', {'video': video, 'detected_guns': detected_guns})
+        return render(request, 'video_results.html', {'video': video})
