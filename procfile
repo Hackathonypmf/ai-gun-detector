@@ -1,1 +1,1 @@
-web: python ./manage.py runserver
+web: gunicorn --workers=2 test:gun_detector_app
