@@ -1,4 +1,4 @@
-# ai-gun-detector
+# ai-gun-detector InnovateX
 # Предварительные требования: python, virtual environment, pip
 
 # Установка зависимостей
