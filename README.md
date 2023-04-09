@@ -1,4 +1,19 @@
 # ai-gun-detector
+# Предварительные требования: python, virtual environment, pip
+
+# Установка зависимостей
+установите зависимости с помощью "pip install -r requirements.txt"
+
+# Создание виртуальной среды
+virtualenv gunvenv
+
+# Запуск сервера Django
+python manage.py runserver
+
+Откройте ссылку на локальный сервер, нажмите Ctrl + левый клик на ссылку в терминале
+
+
+# ai-gun-detector
 
 
 # prerequisites: 
