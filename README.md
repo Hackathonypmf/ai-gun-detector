@@ -1,6 +1,7 @@
 # ai-gun-detector
 
-# prerequisites: python, virtual environement, pip
+# prerequisites: 
+python, virtual environement, pip
 
 # installing requirements
 First the foremost install requirements using "pip install -r requirements.txt"
