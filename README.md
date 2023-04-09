@@ -17,4 +17,4 @@ virtualenv gunvenv
 python manage.py runserver
 
 
-# open the link on a local server, click ctrl+left click on the link in the terminal
+open the link on a local server, click ctrl+left click on the link in the terminal
