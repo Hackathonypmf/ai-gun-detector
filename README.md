@@ -12,6 +12,9 @@ python manage.py runserver
 
 Откройте ссылку на локальный сервер, нажмите Ctrl + левый клик на ссылку в терминале
 
+# Ссылка на презентацию
+https://drive.google.com/file/d/1J9oG-jrngo4IvkPe_oHxx4cucs7bTFq_/view?usp=sharing
+
 
 # ai-gun-detector
 
